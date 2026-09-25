@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Sarah Yuzi Sandström</title>
+<meta name="description" content="Software, data and machine-learning projects by Sarah Yuzi Sandström: a validated ETL pipeline and REST API, a phishing-classifier investigation, and a scheduled change-detection pipeline.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="page">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: baseline; justify-content: space-between">
+<a href="../" style="font-size: 16px; font-weight: 600; color: #17191C">Sarah Yuzi Sandström</a>
+<nav style="display: flex; align-items: baseline; gap: 32px; font-size: 15px">
+<a href="./" style="color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Projects</a>
+<a href="../about/" style="color: #17191C">About</a>
+<a href="../cv/" style="color: #17191C">CV</a>
+<span style="width: 1px; height: 14px; background: #D8D7D1"></span>
+<a href="https://github.com/yuzi2021" style="color: #656B73">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #656B73">LinkedIn</a>
+</nav>
+</header>
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 80px 104px">
+<h1 style="margin: 0; font-size: 62px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.05">Projects</h1>
+<p style="margin: 40px 0 0; max-width: 720px; font-size: 19px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Software, data and machine-learning work from my Computer Science studies and my own projects. Each entry says whether it is coursework, coursework I extended independently, or self-directed. Where a source repository is private, only the demo is linked.</p>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<article id="skillpath" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 32px 0 72px; border-top: 1px solid #17191C">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C; line-height: 1.6">01 · Flagship<br/>software &amp; data project</p>
+<dl style="margin: 40px 0 0; display: grid; gap: 20px">
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Context</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">University of London coursework, extended as an independent project</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Technology</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Python · Django · Django REST Framework · PostgreSQL 16 · SQLite · SQL · GitHub Actions · Docker Compose · Render</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Status</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Public demo live · source repository private</dd>
+</div>
+</dl>
+</div>
+<div>
+<h2 style="margin: 0; font-size: 46px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.05">SkillPath Navigator</h2>
+<p style="margin: 14px 0 0; font-size: 20px; font-weight: 500; color: #656B73">A validated data pipeline and REST API over a job–skill dataset</p>
+<p style="margin: 32px 0 0; max-width: 680px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">SkillPath loads 464 job postings, 319 skills and 5,845 job–skill relationships into a relational database and answers questions about them through a Django REST Framework API: skill demand, skills by role, job matching by skill set, and skill co-occurrence.</p>
+<p style="margin: 22px 0 0; max-width: 680px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">After the original coursework API, I added an ETL command that validates every row and cross-file reference before an atomic, repeatable load; PostgreSQL support alongside SQLite; Docker Compose; analytical SQL; a GitHub Actions workflow that runs all 44 tests against PostgreSQL 16; a browser interface over the API; and a public deployment on Render.</p>
+<div style="margin-top: 40px; display: flex; align-items: baseline; gap: 32px">
+<a href="skillpath/" style="font-size: 17px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Read the case study →</a>
+<a href="https://skillpath-navigator-bji1.onrender.com/app/" style="font-size: 17px; color: #315D8C">Open the live demo ↗</a>
+</div>
+</div>
+</article>
+<article id="phishing-classifier" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 64px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C; line-height: 1.6">02 · Machine learning<br/>case study</p>
+<dl style="margin: 40px 0 0; display: grid; gap: 20px">
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Context</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Computer Science coursework · CM3015 Machine Learning and Neural Networks, University of London · 2026</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Technology</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Python · TensorFlow / Keras · scikit-learn · SHAP · NumPy · BeautifulSoup · Jupyter</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Access</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Assessed coursework · not published</dd>
+</div>
+</dl>
+</div>
+<div>
+<h2 style="margin: 0; font-size: 36px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1">Phishing Detection: signal or artifact?</h2>
+<p style="margin: 12px 0 0; font-size: 19px; font-weight: 500; color: #656B73">What a high score does and does not tell you about a model</p>
+<p style="margin: 28px 0 0; max-width: 680px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The question was whether a neural-network classifier recognises phishing from genuine cues, or from properties of the datasets it was trained on. The assignment limited models to TensorFlow Dense and Dropout layers.</p>
+<h3 style="margin: 44px 0 0; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Preparing the data</h3>
+<p style="margin: 14px 0 0; max-width: 680px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Phishing examples came from the Nazario corpus (mbox files) and legitimate ones from Enron (a maildir of individual files), so each needed its own loader into a shared record of source, label, headers and body. HTML bodies were converted to text, attachments ignored, binary payloads decoded defensively and oversized messages capped. I deduplicated before splitting so identical emails could not appear in both training and test data, balanced the classes to 4,544 each, and made stratified splits of 6,361 / 1,363 / 1,364. The vocabulary was fitted on the training set only.</p>
+<h3 style="margin: 36px 0 0; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Training and evaluation</h3>
+<p style="margin: 14px 0 0; max-width: 680px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">I compared a single-unit baseline (equivalent to logistic regression) with larger networks, dropout and smaller models, repeating each configuration across three random seeds. Two input variants — with and without email headers — used identical splits. The test set was used once, for the selected model:</p>
+<div style="margin-top: 24px; max-width: 680px">
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 14px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 16px; font-weight: 600">Headers included</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3D4248">F1 0.998 · precision 1.000 · recall 0.996</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 14px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 16px; font-weight: 600">Body only</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3D4248">F1 0.970 · precision 0.967 · recall 0.974</p>
+</div>
+</div>
+<h3 style="margin: 36px 0 0; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Unexpected behaviour, explainability and generalisation</h3>
+<p style="margin: 14px 0 0; max-width: 680px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The single linear unit already scored almost as well as the deeper models, and regularisation made no meaningful difference — signs of an easily separable task. SHAP attribution showed that 18 of the 25 most influential tokens in the headers model were mail-routing and source artifacts rather than phishing cues. The body-only model leaned more on recognisable cues such as credential language, generic greetings and brand names, but every phishing email still came from one corpus and every legitimate one from another. Applied unchanged to 8,000 emails from five other benchmark collections, its recall fell from 0.97 to 0.38 while precision stayed at 0.90. Those collections also label ordinary spam as positive, so this is a boundary check rather than a clean test — but it shows the within-corpus score does not transfer unchanged.</p>
+<h3 style="margin: 36px 0 0; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">What I took from it</h3>
+<p style="margin: 14px 0 0; max-width: 680px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">How the data was assembled mattered more than the model architecture. A clean train/test protocol only proves a model generalises within the same distribution; if a shortcut exists in the data, the test set shares it. I now look at where each class came from before trusting a metric.</p>
+</div>
+</article>
+<!-- FEATURED 03 — reserved for the eLearning Platform once its upgrade is verified.
+     To add it: copy article 02 above (id, label "03 · ...", dl, h2, sections) and use verified details only. -->
+<article id="other-work" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 8px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #656B73; line-height: 1.6">Other technical work</p>
+</div>
+<div style="max-width: 760px">
+<div id="change-monitor" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">GRC Change Monitor</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Self-directed · source private</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A weekday GitHub Actions pipeline that checks six official security and data-protection sources through RSS, JSON and HTML adapters, normalises each item, fingerprints its metadata to detect new and updated items, and stores changes, history and source health in SQLite. A failed or partial source run is never reported as &ldquo;no changes&rdquo;, and first-run items are recorded as a baseline rather than as new events. 67 deterministic tests use recorded responses and run before each monitoring run. <a href="https://grc-change-monitor-jvw82ubppznh6rcf3b8rhe.streamlit.app/">Live demo ↗</a></p>
+</div>
+<div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">GRC Ops Lab</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Self-directed technical lab</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A Streamlit app over fictional CSV data. One scenario reconciles a training report showing 192 of 192 complete against an authoritative population of 196, surfacing the 4 people with no assignment; another calculates remediation deadlines and exception expiry. 35 pytest tests, each using an injected reference date rather than the system clock. <a href="https://grc-ops-lab-we3hi8j6vqdancbne495xv.streamlit.app/">Live demo ↗</a></p>
+</div>
+<div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">AI research digest agent</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Self-directed</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A scheduled Python job on GitHub Actions that collects RSS items, fingerprints web pages to detect changes, keeps state between runs, and sends the results to the Claude API for a filtered daily summary. Failures are reported in the output rather than stopping the run. Built with AI pair-programming, then configured and maintained by me. <a href="https://github.com/yuzi2021/ai-digest-agent-demo">Repository ↗</a></p>
+</div>
+<div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">SMS spam classification</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">CM3015 coursework</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">Implemented Multinomial Naïve Bayes from scratch in NumPy, confirmed it made identical predictions to scikit-learn&rsquo;s version, and compared it with k-nearest neighbours (spam recall 0.919 vs 0.678). Along the way, found that pandas&rsquo; default quote handling silently merged rows — 5,572 loaded instead of the documented 5,574 — and fixed the loading.</p>
+</div>
+</div>
+</article>
+</div>
+<footer style="border-top: 1px solid #DEDCD5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 80px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">Sarah Yuzi Sandström</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #656B73">Computer Science student · Software &amp; data projects</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 28px; font-size: 14px">
+<a href="https://github.com/yuzi2021" style="color: #17191C">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #17191C">LinkedIn</a>
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="color: #17191C">Email</a>
+<span style="color: #656B73">Finland</span>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>

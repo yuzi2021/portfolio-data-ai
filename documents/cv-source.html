@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sarah Yuzi Sandström — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 12mm 14mm 10mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 8.5pt; line-height: 1.38; color: #1d2126; }
+a { color: #2f5d8f; text-decoration: none; }
+h1 { font-family: "Literata", serif; font-weight: 600; font-size: 21pt; margin: 0; letter-spacing: -0.01em; }
+.tag { color: #2f5d8f; font-weight: 500; font-size: 9.6pt; margin-top: 2pt; }
+.contact { font-size: 7.8pt; color: #555c64; margin-top: 4pt; line-height: 1.55; }
+.rule { border-top: 1.2pt solid #1d2126; margin: 7pt 0 0; }
+h2 { font-size: 6.9pt; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2f5d8f; margin: 8pt 0 3pt; }
+p { margin: 0 0 3pt; }
+.row { display: grid; grid-template-columns: 34mm 1fr; gap: 3mm; margin-bottom: 1.5pt; }
+.row b { font-weight: 600; }
+.item { margin-bottom: 4pt; }
+.head { display: flex; justify-content: space-between; align-items: baseline; }
+.head .t { font-family: "Literata", serif; font-weight: 600; font-size: 9.6pt; }
+.head .d { font-size: 7.8pt; color: #555c64; white-space: nowrap; }
+.sub { font-size: 7.8pt; color: #555c64; margin: 0.5pt 0 1.5pt; }
+ul { margin: 1pt 0 0; padding-left: 11pt; }
+li { margin-bottom: 1pt; }
+.stack { background: #eef2f8; padding: 2pt 5pt; margin-top: 2.5pt; font-size: 7.7pt; }
+.stack b { font-weight: 600; }
+.cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.cols b { font-weight: 600; display: block; }
+.cols span { font-size: 7.8pt; color: #555c64; }
+</style>
+</head>
+<body>
+<h1>Sarah Yuzi Sandström</h1>
+<div class="tag">Computer Science student · Python · SQL · Data pipelines · Testing &amp; CI</div>
+<div class="contact">Kauniainen, Finland · Permanent Finnish residency · +358 45 102 9420<br>
+<a href="mailto:sarahyuzisandstrom@gmail.com">sarahyuzisandstrom@gmail.com</a> · <a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/">LinkedIn</a> · <a href="https://github.com/yuzi2021">GitHub</a></div>
+<div class="rule"></div>
+
+<h2>Profile</h2>
+<p>Computer Science student (University of London, expected 2027) who has been building software through my studies and independent projects since 2023, after an established career in education. My recent work covers Python, SQL and PostgreSQL, relational data modelling, REST APIs, validated ETL, automated testing, Git, GitHub Actions, Docker and deployment. I am working towards data and AI engineering and want to develop this foundation in a professional engineering environment.</p>
+
+<h2>Technical skills</h2>
+<div class="row"><b>Programming &amp; data</b><span>Python · SQL · PostgreSQL · SQLite · relational data modelling · data validation &amp; transformation</span></div>
+<div class="row"><b>Backend &amp; applications</b><span>Django · Django REST Framework · REST APIs · OpenAPI docs (Swagger, ReDoc) · Streamlit · JavaScript · HTML/CSS</span></div>
+<div class="row"><b>Development &amp; quality</b><span>Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render</span></div>
+<div class="row"><b>Data &amp; AI</b><span>ETL (extract, validate, transform, load) · scheduled ingestion &amp; change detection · TensorFlow/Keras · scikit-learn · SHAP · NumPy · pandas · Claude API</span></div>
+
+<h2>Projects</h2>
+<div class="item">
+<div class="head"><span class="t">SkillPath Navigator — data pipeline &amp; REST API</span><span class="d">Coursework, extended independently · 2026</span></div>
+<div class="sub"><a href="https://skillpath-navigator-bji1.onrender.com/app/">Live demo</a> · source repository private</div>
+<ul>
+<li>Django REST Framework API over 464 job postings, 319 skills and 5,845 job–skill relationships, with a many-to-many model through an explicit join table.</li>
+<li>Built an extract → validate → transform → load command: malformed rows, conflicting duplicates and broken cross-file references reject the snapshot before an atomic, repeatable load.</li>
+<li>44 passing tests, run by GitHub Actions against PostgreSQL 16; Docker Compose for development; SQLite demo deployed on Render only after checks pass.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span class="t">Phishing email classifier: signal or artifact?</span><span class="d">CM3015 Machine Learning coursework · 2026</span></div>
+<ul>
+<li>Parsed the Nazario (mbox) and Enron (maildir) corpora into one record format; deduplicated before splitting, balanced and stratified the data; fitted the vocabulary on training data only.</li>
+<li>TensorFlow Dense/Dropout models compared across three seeds; test F1 0.970–0.998. SHAP showed 18 of the 25 most influential tokens in the headers model were source artifacts, and recall fell to 0.38 on other benchmark corpora.</li>
+</ul>
+</div>
+<div class="item">
+<div class="head"><span class="t">GRC Change Monitor — scheduled ingestion &amp; change detection</span><span class="d">Self-directed · 2026</span></div>
+<div class="sub"><a href="https://grc-change-monitor-jvw82ubppznh6rcf3b8rhe.streamlit.app/">Live demo</a> · source repository private</div>
+<ul>
+<li>Weekday GitHub Actions pipeline reading six official sources via RSS, JSON and HTML adapters; normalises and fingerprints items and stores changes, history and source health in SQLite.</li>
+<li>Partial failures never report as “no changes”; first-run items recorded as a baseline; 67 deterministic tests run before each monitoring run.</li>
+</ul>
+</div>
+<p><b style="font-weight:600">Also:</b> SMS spam classification with Naïve Bayes implemented from scratch in NumPy (coursework) · <a href="https://github.com/yuzi2021/ai-digest-agent-demo">AI research digest agent</a> (GitHub Actions, Claude API) · GRC Ops Lab (CSV reconciliation, 35 pytest tests)</p>
+
+<h2>Professional experience</h2>
+<div class="item">
+<div class="head"><span class="t">Privacy &amp; Digital-Workplace Development Project</span><span class="d">2024–2026</span></div>
+<ul><li>Investigated digital-tool and information-handling problems with staff, management, IT and a Data Protection Officer; produced a legally reviewed 57-page staff guide and training. Published as a co-authored thesis (Laurea, 2024).</li></ul>
+</div>
+<div class="item">
+<div class="head"><span class="t">Teacher Assistant — Pilke Päiväkodit, Finland</span><span class="d">2022–2024</span></div>
+<ul><li>Resolved issues independently in a fast-moving service environment; designed and delivered staff learning on data protection, information security and responsible use of digital tools.</li></ul>
+</div>
+<div class="item">
+<div class="head"><span class="t">Educator / Pedagogy Consultant — International schools &amp; education technology</span><span class="d">2013–2022</span></div>
+<ul><li>At LingoAce, automated the reporting system, reducing reporting time by 70%. Developed learning materials and worked across multicultural teams, adapting explanations to each audience.</li></ul>
+</div>
+
+<h2>Education</h2>
+<div class="head"><span class="t">BSc Computer Science — University of London</span><span class="d">Expected 2027</span></div>
+<div class="sub">Web development · databases · APIs · software testing · machine learning</div>
+<p style="margin-top:2pt">Master’s studies in Changing Education, University of Helsinki (2025) · MA English Studies &amp; Subject Teacher Training, University of Helsinki (2019) · BA English Studies for Teaching, University of Buckingham, First Class Honours (2013)</p>
+
+<p style="margin-top:3pt"><b style="font-weight:600">Languages:</b> Mandarin (native) · English (full professional) · Finnish (basic to pre-intermediate) · Swedish (elementary)</p>
+</body>
+</html>

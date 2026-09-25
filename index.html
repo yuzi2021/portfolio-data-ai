@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarah Yuzi Sandström — Software &amp; Data Projects</title>
+<meta name="description" content="Computer Science student building reliable software and data systems with Python, SQL, REST APIs, validated data pipelines, automated tests and CI — working towards data and AI engineering.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: baseline; justify-content: space-between">
+<a href="./" style="font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: #17191C">Sarah Yuzi Sandström</a>
+<nav style="display: flex; align-items: baseline; gap: 32px; font-size: 15px">
+<a href="projects/" style="color: #17191C">Projects</a>
+<a href="about/" style="color: #17191C">About</a>
+<a href="cv/" style="color: #17191C">CV</a>
+<span style="width: 1px; height: 14px; background: #D8D7D1"></span>
+<a href="https://github.com/yuzi2021" style="color: #656B73">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #656B73">LinkedIn</a>
+</nav>
+</header>
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 80px 128px">
+<p style="margin: 0 0 40px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #656B73">Sarah Yuzi Sandström <span style="color: #B4B2A9">·</span> Computer Science student</p>
+<h1 style="margin: 0; max-width: 980px; font-size: 62px; line-height: 1.1; font-weight: 500; letter-spacing: -0.025em; text-wrap: balance">Building reliable software and data systems</h1>
+<p style="margin: 48px 0 0; max-width: 720px; font-size: 19px; line-height: 1.65; color: #3D4248; text-wrap: pretty">I have been writing software through my Computer Science studies and my own projects since 2023. My recent work is in Python and SQL: relational data models, REST APIs, data loads that validate every row before writing anything, and automated tests that CI runs against a real PostgreSQL database.</p>
+<p style="margin: 24px 0 0; max-width: 720px; font-size: 19px; line-height: 1.65; color: #3D4248; text-wrap: pretty">I am now working towards data and AI engineering, and looking for a professional environment in which to take that foundation further.</p>
+<div style="margin-top: 56px; display: flex; align-items: center; gap: 28px">
+<a href="projects/skillpath/" style="display: inline-block; padding: 14px 24px; background: #315D8C; color: #F8F8F6; font-size: 16px; font-weight: 500; border-radius: 3px">Read the SkillPath case study</a>
+<a href="cv/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #C9C7BF; padding-bottom: 3px">CV</a>
+</div>
+<p style="margin: 72px 0 0; font-size: 14px; letter-spacing: 0.02em; color: #656B73">Finland <span style="color: #B4B2A9">·</span> BSc Computer Science, University of London <span style="color: #B4B2A9">·</span> expected 2027</p>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; border-top: 1px solid #17191C; padding-top: 28px; padding-bottom: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Technical profile</h2>
+<p style="margin: 0; max-width: 620px; font-size: 17px; line-height: 1.6; color: #656B73">What I have actually built and tested, and where each piece of evidence comes from.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px">
+<div>
+<h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Data loading &amp; validation</h3>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">In SkillPath, CSV snapshots pass through extract, validate, transform and load steps. A malformed row, a conflicting duplicate or a broken cross-file reference rejects the whole snapshot before any database write, and the loader reports what it processed, loaded, skipped and rejected.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Databases &amp; SQL</h3>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Relational modelling in Django, including a many-to-many relationship through an explicit join table; PostgreSQL 16 in CI and Docker Compose; SQLite for the lightweight public demo; and analytical SQL queries written alongside their ORM equivalents.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Testing &amp; CI/CD</h3>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">44 tests in SkillPath, run by GitHub Actions against a PostgreSQL service, with deployment triggered only once checks pass. 67 deterministic tests in GRC Change Monitor, which use recorded source responses so a slow website can never make the suite flaky.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Machine learning</h3>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Coursework applying a sealed train/validation/test protocol, multi-seed comparison and SHAP attribution to a phishing classifier — and showing that a near-perfect score came largely from the model recognising its source datasets rather than phishing.</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding-bottom: 72px; border-top: 1px solid #17191C; padding-top: 28px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">Featured work</h2>
+<p style="margin: 0; max-width: 620px; font-size: 17px; line-height: 1.6; color: #656B73">Each project is labelled with its context: coursework, coursework extended independently, or self-directed.</p>
+</div>
+<!-- FEATURED 01 -->
+<article style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 56px 0 72px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C">01 · Flagship<br/>software &amp; data project</p>
+<dl style="margin: 40px 0 0; display: grid; gap: 20px">
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Context</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">University of London coursework, extended as an independent project</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Technology</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Python · Django · Django REST Framework · PostgreSQL · SQLite · SQL · GitHub Actions · Docker Compose · Render</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Status</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Public demo live · source repository private</dd>
+</div>
+</dl>
+</div>
+<div>
+<h3 style="margin: 0; font-size: 46px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.05">SkillPath Navigator</h3>
+<p style="margin: 14px 0 0; font-size: 20px; font-weight: 500; color: #656B73">A validated data pipeline and REST API over a job–skill dataset</p>
+<p style="margin: 32px 0 0; max-width: 660px; font-size: 18px; line-height: 1.65; color: #3D4248; text-wrap: pretty">SkillPath loads a fixed snapshot of entry-level job postings into a relational database and exposes skill-demand and job-matching analyses through a Django REST Framework API, with a browser interface on top.</p>
+<p style="margin: 22px 0 0; max-width: 660px; font-size: 18px; line-height: 1.65; color: #3D4248; text-wrap: pretty">It began as a coursework API. I then rebuilt the data loading as a validated ETL command, made the application run on PostgreSQL as well as SQLite, added Docker Compose, set up GitHub Actions to run every test against PostgreSQL 16, and deployed a public demo on Render.</p>
+<div style="margin-top: 36px; max-width: 660px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; font-size: 14px; color: #3D4248">
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">3 CSV files</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">extract</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #315D8C; border-radius: 3px; color: #315D8C">validate</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">transform</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">atomic load</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">PostgreSQL / SQLite</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">REST API</span><span style="color: #B4B2A9">→</span>
+<span style="padding: 6px 10px; border: 1px solid #DEDCD5; border-radius: 3px">web UI</span>
+</div>
+<div style="margin-top: 40px; max-width: 660px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid #DEDCD5; padding-top: 24px">
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">464</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">job postings</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">319</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">skills</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">5,845</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">job–skill links</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">44</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">passing tests</p></div>
+</div>
+<div style="margin-top: 40px; display: flex; align-items: baseline; gap: 32px">
+<a href="projects/skillpath/" style="font-size: 17px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Read the case study →</a>
+<a href="https://skillpath-navigator-bji1.onrender.com/app/" style="font-size: 17px; color: #315D8C">Open the live demo ↗</a>
+</div>
+</div>
+</article>
+<!-- FEATURED 02 -->
+<article style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 56px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C">02 · Machine learning<br/>case study</p>
+<p style="margin: 32px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Computer Science coursework · CM3015 Machine Learning and Neural Networks</p>
+<p style="margin: 20px 0 0; font-size: 14px; line-height: 1.5; color: #656B73">Python · TensorFlow / Keras · scikit-learn · SHAP · BeautifulSoup</p>
+</div>
+<div>
+<h3 style="margin: 0; font-size: 34px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1">Phishing Detection: signal or artifact?</h3>
+<p style="margin: 12px 0 0; font-size: 18px; font-weight: 500; color: #656B73">What a high score does and does not tell you about a model</p>
+<p style="margin: 26px 0 0; max-width: 620px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">I parsed two raw email corpora with different on-disk formats into one record structure, deduplicated before splitting, balanced the classes and created stratified train, validation and test sets. The final model reached an F1 of 0.97–0.998 on the held-out test set.</p>
+<p style="margin: 20px 0 0; max-width: 620px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">The investigation was about why. A single linear unit already scored almost as well, and SHAP showed that 18 of the 25 most influential tokens in the model that saw email headers were routing and source artifacts: it had largely learned which dataset an email came from. On other benchmark corpora, the body-only model&rsquo;s recall fell from 0.97 to 0.38.</p>
+<div style="margin-top: 32px">
+<a href="projects/#phishing-classifier" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Read more →</a>
+</div>
+</div>
+</article>
+<!-- FEATURED 03 — reserved for the eLearning Platform once its upgrade is verified.
+     To add it: copy article 02 above, change the label to "03 · ...", and fill in verified details only. -->
+<article style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 8px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #656B73; line-height: 1.6">Other technical work</p>
+</div>
+<div style="max-width: 760px">
+<div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">GRC Change Monitor</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Self-directed</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">Scheduled GitHub Actions pipeline that reads six public sources through RSS, JSON and HTML adapters, normalises and fingerprints each item, and stores changes and source health in SQLite. 67 deterministic tests. <a href="projects/#change-monitor">More →</a></p>
+</div>
+<div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 18px; font-weight: 600">AI research digest agent</p>
+<p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Self-directed</p>
+</div>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A scheduled Python job on GitHub Actions that collects RSS items, detects page changes, keeps state between runs, and sends the results to the Claude API for a filtered daily summary. Built with AI pair-programming. <a href="https://github.com/yuzi2021/ai-digest-agent-demo">Repository ↗</a></p>
+</div>
+<div style="margin-top: 28px">
+<a href="projects/" style="font-size: 16px; color: #315D8C">All projects →</a>
+</div>
+</div>
+</article>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; border-top: 1px solid #17191C; padding-top: 28px; padding-bottom: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Technical skills</h2>
+<p style="margin: 0; max-width: 620px; font-size: 17px; line-height: 1.6; color: #656B73">Listed only where a project above uses them.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px">
+<div>
+<h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Programming &amp; data</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Python · SQL · PostgreSQL · SQLite · relational data modelling · data validation &amp; transformation</p>
+</div>
+<div>
+<h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Backend &amp; applications</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Django · Django REST Framework · REST APIs · OpenAPI docs (Swagger, ReDoc) · Streamlit</p>
+</div>
+<div>
+<h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Development &amp; quality</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render</p>
+</div>
+<div>
+<h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Data &amp; AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">ETL (extract, validate, transform, load) · scheduled ingestion &amp; change detection · TensorFlow / Keras · scikit-learn · SHAP · model evaluation · Claude API</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #656B73">About</p>
+<img alt="Sarah Yuzi Sandström" height="88" src="sarah-sandstrom.jpeg" style="display: block; width: 88px; height: 88px; border-radius: 50%; object-fit: cover; margin-top: 32px" width="88"/>
+</div>
+<div>
+<h2 style="margin: 0; max-width: 720px; font-size: 38px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.15">A second career, built on the first</h2>
+<p style="margin: 36px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Before Computer Science I spent more than a decade in education: teaching, consulting on technology-supported learning and, at LingoAce, automating a reporting process that cut reporting time by 70%. It taught me to learn quickly, work with many different stakeholders and explain complicated things clearly.</p>
+<p style="margin: 24px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Most recently I worked on data protection and information security with IT and a Data Protection Officer. That is why my projects check data before trusting it, keep automated results separate from human decisions, and are honest about their limits.</p>
+<div style="margin-top: 40px">
+<a href="about/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">More about me →</a>
+</div>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">What I want to learn next</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 22px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; text-wrap: pretty">The parts of my projects I enjoy most are the data-facing ones.</p>
+<p style="margin: 28px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Deciding what counts as a valid record, making a load safe to run twice, finding out why a model scores suspiciously well. I have taken these as far as coursework and self-directed projects allow. The next step is learning how they are done professionally: larger and messier data, cloud platforms, production pipelines, and code review from experienced engineers.</p>
+<div style="margin-top: 40px; display: flex; align-items: center; gap: 28px">
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="display: inline-block; padding: 14px 24px; background: #315D8C; color: #F8F8F6; font-size: 16px; font-weight: 500; border-radius: 3px">Get in touch</a>
+<a href="cv/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #C9C7BF; padding-bottom: 3px">CV</a>
+</div>
+</div>
+</div>
+</div>
+<footer style="border-top: 1px solid #DEDCD5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 80px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">Sarah Yuzi Sandström</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #656B73">Computer Science student · Software &amp; data projects</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 28px; font-size: 14px">
+<a href="https://github.com/yuzi2021" style="color: #17191C">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #17191C">LinkedIn</a>
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="color: #17191C">Email</a>
+<span style="color: #656B73">Finland</span>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>

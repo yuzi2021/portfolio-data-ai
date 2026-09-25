@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkillPath Navigator — Sarah Yuzi Sandström</title>
+<meta name="description" content="SkillPath Navigator: a validated ETL pipeline, relational database and Django REST API over a job–skill dataset, tested in CI against PostgreSQL 16 and deployed as a public demo.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<main class="page">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: baseline; justify-content: space-between">
+<a href="../../" style="font-size: 16px; font-weight: 600; color: #17191C">Sarah Yuzi Sandström</a>
+<nav style="display: flex; align-items: baseline; gap: 32px; font-size: 15px">
+<a href="../" style="color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Projects</a>
+<a href="../../about/" style="color: #17191C">About</a>
+<a href="../../cv/" style="color: #17191C">CV</a>
+<span style="width: 1px; height: 14px; background: #D8D7D1"></span>
+<a href="https://github.com/yuzi2021" style="color: #656B73">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #656B73">LinkedIn</a>
+</nav>
+</header>
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 80px 120px">
+<p style="margin: 0 0 36px; font-size: 12px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #315D8C">Coursework, extended as an independent software &amp; data project</p>
+<h1 style="margin: 0; max-width: 1000px; font-size: 68px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.02">SkillPath Navigator</h1>
+<p style="margin: 24px 0 0; font-size: 24px; font-weight: 500; color: #656B73; letter-spacing: -0.01em">A validated data pipeline, relational database and REST API over a job–skill dataset</p>
+<div style="margin-top: 64px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<div style="border-top: 1px solid #DEDCD5; padding-top: 20px">
+<dl style="margin: 0; display: grid; gap: 20px">
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Stack</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #3D4248">Python · Django · Django REST Framework · PostgreSQL 16 · SQLite · SQL · GitHub Actions · Docker Compose · Gunicorn · Render</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Context</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #3D4248">Began as University of London web development coursework; the data pipeline, PostgreSQL support, containers, CI, interface and deployment were added independently</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Access</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #3D4248">Public demo live · source repository private</dd>
+</div>
+</dl>
+</div>
+<div style="max-width: 720px">
+<p style="margin: 0; font-size: 19px; line-height: 1.7; color: #3D4248; text-wrap: pretty">SkillPath loads a fixed snapshot of entry-level job postings and the skills they require into a relational database, then answers questions about it through a REST API: which skills are most in demand, which skills go with a given role, which jobs best match a set of skills, and which skills tend to appear together.</p>
+<p style="margin: 24px 0 0; font-size: 19px; line-height: 1.7; color: #3D4248; text-wrap: pretty">It is the project where I have worked across the most layers at once — data files, loading logic, database, API, browser interface, tests, CI and deployment — and had to work out which layer a problem was really in.</p>
+<div style="margin-top: 48px; display: flex; align-items: center; gap: 28px">
+<a href="https://skillpath-navigator-bji1.onrender.com/app/" style="display: inline-block; padding: 14px 24px; background: #315D8C; color: #F8F8F6; font-size: 16px; font-weight: 500; border-radius: 3px">Open the live demo ↗</a>
+<a href="https://skillpath-navigator-bji1.onrender.com/swagger/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #C9C7BF; padding-bottom: 3px">Interactive API docs ↗</a>
+</div>
+<p style="margin: 20px 0 0; font-size: 14px; line-height: 1.6; color: #656B73">The demo runs on a free hosting tier and can take up to a minute to wake.</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">The engineering problem</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 22px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; text-wrap: pretty">The analyses are only as trustworthy as the data under them.</p>
+<p style="margin: 28px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The dataset arrives as three CSV files — jobs, skills and the links between them — that must agree with each other. A job–skill link that points to a job that does not exist, a date in the wrong format, or two different rows claiming the same key would quietly distort every count the API returns.</p>
+<p style="margin: 24px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">So the loading had to be strict, explain what it rejected, be safe to run more than once, and never leave the database half-written. And the whole system had to behave the same way on SQLite locally, PostgreSQL in CI, and the deployed demo.</p>
+<div style="margin-top: 48px; max-width: 700px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid #DEDCD5; padding-top: 24px">
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">464</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">job postings</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">319</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">skills</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">5,845</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">job–skill links</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">44</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">passing tests</p></div>
+</div>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Architecture &amp; data flow</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Data moves in one direction, from the CSV snapshot to the browser. Each layer has one job.</p>
+<div style="margin-top: 48px; max-width: 760px">
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">1 · Source data</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">Three CSV files: job postings (dated 12–17 January 2024), skills with categories, and job–skill links.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">2 · ETL command</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A Django management command that runs <em>extract → validate → transform → load</em>, with a validate-only mode that checks the files without touching the database.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">3 · Database</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">Jobs and skills in a many-to-many relationship through an explicit join table; bookmarks with notes and an application status reference jobs. SQLite by default, PostgreSQL when configured.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">4 · REST API</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">Django REST Framework endpoints for skill demand, skills by role, job matching, skill co-occurrence and bookmark create/read/update/delete, documented with Swagger and ReDoc.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">5 · Web interface</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">A Django template with plain JavaScript that calls the same public API, so the interface exercises the API rather than bypassing it.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<p style="margin: 0; font-size: 17px; font-weight: 600">6 · Delivery</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248">GitHub Actions for checks and tests; Render rebuilds the demo from the checked-in CSVs, and deploys only after the checks pass.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Implementation decisions</h2>
+<div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; max-width: 760px">
+<div>
+<h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Reject the whole snapshot</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Validation checks file presence and headers, required fields and field lengths, URL syntax, date format and range, allowed categories, duplicate keys, and that every link points to a job and a skill in the same snapshot. One malformed row or conflicting duplicate rejects everything, with the reason and line number.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Distinguish skip from reject</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">An exact duplicate row is harmless and is skipped and counted. A duplicate key with different content is a genuine conflict and is rejected. Each run reports processed, loaded, skipped and rejected counts for every file.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Make loading safe to repeat</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">The load runs inside a single database transaction and skips keys that already exist, so running it twice changes nothing. The optional clear-and-reload validates first, so bad data can never delete good data.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Configure through the environment</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">The same code runs on SQLite, local PostgreSQL, Docker Compose and the hosted demo, selected by environment variables. With debug off, the application refuses to start unless a secret key is set.</p>
+</div>
+</div>
+<p style="margin: 48px 0 0; max-width: 700px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">I also wrote four analytical SQL queries against the real tables — top skills, category frequencies, jobs by number of skills, and postings by country and work type — each with its equivalent Django ORM expression, to check that I understood what the ORM was generating.</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Testing &amp; reliability</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The suite has 44 tests: 29 from the original coursework covering the API, 11 for the data pipeline, and 4 for the interface. The pipeline tests feed the loader deliberately broken files — an invalid or future date, a missing field, a bad URL, a conflicting duplicate, an unknown skill reference, a wrong header — and check that each is rejected without writing anything.</p>
+<p style="margin: 24px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">On every push, GitHub Actions runs the following against a real PostgreSQL 16 service:</p>
+<ul style="margin: 32px 0 0; padding: 0 0 0 28px; list-style: none; max-width: 640px; border-left: 1px solid #DEDCD5; display: grid; gap: 14px; font-size: 17px; line-height: 1.55; color: #3D4248">
+<li>Confirm the connection really is PostgreSQL, and fail rather than fall back to SQLite</li>
+<li>Run Django&rsquo;s system checks and confirm no model change is missing a migration</li>
+<li>Apply the migrations</li>
+<li>Validate the checked-in dataset without loading it</li>
+<li>Run the full test suite</li>
+</ul>
+<p style="margin: 32px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Some problems only appear under production settings, where debug is off, HTTPS is enforced and static files are served differently. One interface test therefore loads the page under exactly those settings, and another checks that its CSS and JavaScript can actually be found.</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Known limitations</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The dataset is a historical January 2024 snapshot and does not update. Its original collection scripts are not part of the project, so its provenance cannot be reproduced. The API allows anonymous access and bookmarks are shared rather than owned by a user. The public demo uses SQLite on temporary storage, rebuilt from the CSVs on each deploy — fine for a demonstration, not for keeping user data.</p>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 120px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">What I learned</h2>
+<div>
+<p style="margin: 0; max-width: 700px; font-size: 22px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; text-wrap: pretty">Most of the engineering is in deciding what should happen when things go wrong.</p>
+<p style="margin: 28px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Writing the happy path took far less time than deciding what counts as a bad row, what the loader should say about it, and what state the database is left in afterwards. Testing against PostgreSQL rather than only SQLite, and under production settings rather than only debug mode, means the tests cover the configurations the system actually runs in, not just the convenient one.</p>
+<p style="margin: 24px 0 0; max-width: 700px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">When something failed, the useful question was which layer it lived in — the data, the loader, the database, the API or the browser — and reproducing it there before changing anything. That habit is what I most want to keep developing on larger systems.</p>
+<div style="margin-top: 48px; display: flex; align-items: baseline; gap: 32px">
+<a href="https://skillpath-navigator-bji1.onrender.com/app/" style="font-size: 17px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Open the live demo ↗</a>
+<a href="https://skillpath-navigator-bji1.onrender.com/" style="font-size: 17px; color: #315D8C">Project overview ↗</a>
+</div>
+</div>
+</div>
+</div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 120px">
+<a href="../" style="display: block; border-top: 1px solid #DEDCD5; padding-top: 28px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #656B73">More work</p>
+<p style="margin: 16px 0 0; font-size: 36px; font-weight: 500; letter-spacing: -0.025em; color: #17191C">All projects →</p>
+</a>
+</div>
+<footer style="border-top: 1px solid #DEDCD5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 80px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">Sarah Yuzi Sandström</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #656B73">Computer Science student · Software &amp; data projects</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 28px; font-size: 14px">
+<a href="https://github.com/yuzi2021" style="color: #17191C">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #17191C">LinkedIn</a>
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="color: #17191C">Email</a>
+<span style="color: #656B73">Finland</span>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>
