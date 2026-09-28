@@ -7,17 +7,17 @@
 <style>
 @page { size: A4; margin: 12mm 14mm 10mm; }
 * { box-sizing: border-box; }
-body { margin: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 8.5pt; line-height: 1.38; color: #1d2126; }
+body { margin: 0; font-family: "IBM Plex Sans", sans-serif; font-size: 8.4pt; line-height: 1.31; color: #1d2126; }
 a { color: #2f5d8f; text-decoration: none; }
 h1 { font-family: "Literata", serif; font-weight: 600; font-size: 21pt; margin: 0; letter-spacing: -0.01em; }
 .tag { color: #2f5d8f; font-weight: 500; font-size: 9.6pt; margin-top: 2pt; }
 .contact { font-size: 7.8pt; color: #555c64; margin-top: 4pt; line-height: 1.55; }
 .rule { border-top: 1.2pt solid #1d2126; margin: 7pt 0 0; }
-h2 { font-size: 6.9pt; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2f5d8f; margin: 8pt 0 3pt; }
+h2 { font-size: 6.9pt; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2f5d8f; margin: 6.5pt 0 2.5pt; }
 p { margin: 0 0 3pt; }
 .row { display: grid; grid-template-columns: 34mm 1fr; gap: 3mm; margin-bottom: 1.5pt; }
 .row b { font-weight: 600; }
-.item { margin-bottom: 4pt; }
+.item { margin-bottom: 3pt; }
 .head { display: flex; justify-content: space-between; align-items: baseline; }
 .head .t { font-family: "Literata", serif; font-weight: 600; font-size: 9.6pt; }
 .head .d { font-size: 7.8pt; color: #555c64; white-space: nowrap; }
@@ -39,13 +39,13 @@ li { margin-bottom: 1pt; }
 <div class="rule"></div>
 
 <h2>Profile</h2>
-<p>Computer Science student (University of London, expected 2027) who has been building software through my studies and independent projects since 2023, after an established career in education. My recent work covers Python, SQL and PostgreSQL, relational data modelling, REST APIs, validated ETL, automated testing, Git, GitHub Actions, Docker and deployment. I am working towards data and AI engineering and want to develop this foundation in a professional engineering environment.</p>
+<p>Computer Science student (University of London, expected 2027) who has been building software through my studies and independent projects since 2023, after an established career in education. My recent work covers Python, SQL and PostgreSQL, relational data modelling, REST APIs, validated ETL, backend permissions and WebSockets, automated testing, GitHub Actions, Docker and deployment. I am working towards data and AI engineering and want to develop this foundation in a professional engineering environment.</p>
 
 <h2>Technical skills</h2>
 <div class="row"><b>Programming &amp; data</b><span>Python · SQL · PostgreSQL · SQLite · relational data modelling · data validation &amp; transformation</span></div>
-<div class="row"><b>Backend &amp; applications</b><span>Django · Django REST Framework · REST APIs · OpenAPI docs (Swagger, ReDoc) · Streamlit · JavaScript · HTML/CSS</span></div>
-<div class="row"><b>Development &amp; quality</b><span>Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render</span></div>
-<div class="row"><b>Data &amp; AI</b><span>ETL (extract, validate, transform, load) · scheduled ingestion &amp; change detection · TensorFlow/Keras · scikit-learn · SHAP · NumPy · pandas · Claude API</span></div>
+<div class="row"><b>Backend &amp; applications</b><span>Django · DRF · REST APIs · auth &amp; permissions · Channels/WebSockets · Daphne/ASGI · Redis/Celery (local Docker) · JavaScript · HTML/CSS</span></div>
+<div class="row"><b>Development &amp; quality</b><span>Git · GitHub · GitHub Actions · CI/CD · automated testing (Django, unittest, pytest) · Docker/Compose · Render · health checks</span></div>
+<div class="row"><b>Data &amp; AI</b><span>ETL · scheduled ingestion &amp; change detection · TensorFlow/Keras · scikit-learn · SHAP · NumPy · pandas</span></div>
 
 <h2>Projects</h2>
 <div class="item">
@@ -65,14 +65,15 @@ li { margin-bottom: 1pt; }
 </ul>
 </div>
 <div class="item">
-<div class="head"><span class="t">GRC Change Monitor — scheduled ingestion &amp; change detection</span><span class="d">Self-directed · 2026</span></div>
-<div class="sub"><a href="https://grc-change-monitor-jvw82ubppznh6rcf3b8rhe.streamlit.app/">Live demo</a> · source repository private</div>
+<div class="head"><span class="t">eLearning Platform — full-stack &amp; backend engineering</span><span class="d">University project, productionised independently · 2026</span></div>
+<div class="sub"><a href="https://elearning-platform-demo.onrender.com">Live demo</a> · <a href="https://yuzi2021.github.io/portfolio-data-ai/projects/elearning/">case study</a> · source repository private</div>
 <ul>
-<li>Weekday GitHub Actions pipeline reading six official sources via RSS, JSON and HTML adapters; normalises and fingerprints items and stores changes, history and source health in SQLite.</li>
-<li>Partial failures never report as “no changes”; first-run items recorded as a baseline; 67 deterministic tests run before each monitoring run.</li>
+<li>Redesigned a role-aware Django/DRF learning platform with authentication and ownership permissions across HTML, REST, protected resources and Channels WebSockets.</li>
+<li>Deployed with Daphne/ASGI and persistent Neon PostgreSQL; added health, liveness and readiness endpoints.</li>
+<li>85/85 tests passing in GitHub Actions CI. PostgreSQL, Redis, Celery and distributed Channels are implemented/tested in the full local Docker stack; Redis/Celery are not deployed publicly.</li>
 </ul>
 </div>
-<p><b style="font-weight:600">Also:</b> SMS spam classification with Naïve Bayes implemented from scratch in NumPy (coursework) · <a href="https://github.com/yuzi2021/ai-digest-agent-demo">AI research digest agent</a> (GitHub Actions, Claude API) · GRC Ops Lab (CSV reconciliation, 35 pytest tests)</p>
+<p><b style="font-weight:600">Other technical work:</b> GRC Change Monitor (six-source GitHub Actions ingestion, 67 deterministic tests) · SMS spam classification with Naïve Bayes implemented from scratch in NumPy · <a href="https://github.com/yuzi2021/ai-digest-agent-demo">AI research digest agent</a> · GRC Ops Lab (CSV reconciliation, 35 pytest tests)</p>
 
 <h2>Professional experience</h2>
 <div class="item">

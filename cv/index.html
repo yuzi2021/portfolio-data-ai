@@ -71,15 +71,16 @@
 </div>
 </div>
 <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 24px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
-<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #315D8C; line-height: 1.6">2026 · Self-directed</p>
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #315D8C; line-height: 1.6">2026 · University project,<br/>productionised independently</p>
 <div>
-<p style="margin: 0; font-size: 19px; font-weight: 600">GRC Change Monitor <span style="font-weight: 400; color: #656B73">· scheduled ingestion &amp; change detection</span></p>
-<p style="margin: 10px 0 0; font-size: 17px; line-height: 1.65; color: #3D4248">Weekday GitHub Actions pipeline that reads six official sources through RSS, JSON and HTML adapters, normalises and fingerprints each item, and stores new and updated items with history and source health in SQLite. Partial failures never appear as &ldquo;no changes&rdquo;; 67 deterministic tests run before each monitoring run.</p>
-<p style="margin: 10px 0 0; font-size: 16px; color: #656B73">Python · SQLite · unittest · GitHub Actions · Streamlit</p>
-<p style="margin: 14px 0 0; font-size: 16px"><a href="https://grc-change-monitor-jvw82ubppznh6rcf3b8rhe.streamlit.app/">Live demo ↗</a> <span style="color: #656B73">· source private</span></p>
+<p style="margin: 0; font-size: 19px; font-weight: 600">eLearning Platform <span style="font-weight: 400; color: #656B73">· full-stack learning platform &amp; backend engineering</span></p>
+<p style="margin: 10px 0 0; font-size: 17px; line-height: 1.65; color: #3D4248">Redesigned and productionised a role-aware Django platform with scoped REST APIs, authentication and ownership permissions, protected learning resources, notifications and authenticated course WebSockets. The public Daphne / ASGI service uses persistent Neon PostgreSQL and exposes liveness and database-readiness endpoints.</p>
+<p style="margin: 10px 0 0; font-size: 17px; line-height: 1.65; color: #3D4248">All 85 tests pass in GitHub Actions CI. The complete local Docker architecture implements and tests PostgreSQL, Redis, Celery and distributed Channels; Redis and Celery are not running in the public deployment.</p>
+<p style="margin: 10px 0 0; font-size: 16px; color: #656B73">Python · Django · DRF · PostgreSQL · Docker · Daphne / ASGI · Channels · WebSockets · GitHub Actions</p>
+<p style="margin: 14px 0 0; font-size: 16px"><a href="../projects/elearning/">Case study →</a> <span style="color: #B4B2A9">·</span> <a href="https://elearning-platform-demo.onrender.com">Live demo ↗</a> <span style="color: #B4B2A9">·</span> <a href="https://elearning-platform-demo.onrender.com/api-docs/">API docs ↗</a> <span style="color: #656B73">· source private</span></p>
 </div>
 </div>
-<p style="margin: 28px 0 0; font-size: 16px; line-height: 1.7; color: #3D4248"><span style="font-weight: 600">Also</span> <span style="color: #B4B2A9">·</span> SMS spam classification with Naïve Bayes implemented from scratch in NumPy (CM3015 coursework) <span style="color: #B4B2A9">·</span> <a href="https://github.com/yuzi2021/ai-digest-agent-demo">AI research digest agent ↗</a> using GitHub Actions and the Claude API <span style="color: #B4B2A9">·</span> <a href="https://grc-ops-lab-we3hi8j6vqdancbne495xv.streamlit.app/">GRC Ops Lab ↗</a>, CSV reconciliation with 35 pytest tests</p>
+<p style="margin: 28px 0 0; font-size: 16px; line-height: 1.7; color: #3D4248"><span style="font-weight: 600">Other technical work</span> <span style="color: #B4B2A9">·</span> <a href="../projects/#change-monitor">GRC Change Monitor</a>, a six-source GitHub Actions ingestion pipeline with 67 deterministic tests <span style="color: #B4B2A9">·</span> SMS spam classification with Naïve Bayes implemented from scratch in NumPy (CM3015 coursework) <span style="color: #B4B2A9">·</span> <a href="https://github.com/yuzi2021/ai-digest-agent-demo">AI research digest agent ↗</a> using GitHub Actions and the Claude API <span style="color: #B4B2A9">·</span> <a href="https://grc-ops-lab-we3hi8j6vqdancbne495xv.streamlit.app/">GRC Ops Lab ↗</a>, CSV reconciliation with 35 pytest tests</p>
 </div>
 </div>
 </div>
@@ -93,11 +94,11 @@
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Backend &amp; applications</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Django · Django REST Framework · REST APIs · OpenAPI docs (Swagger, ReDoc) · Streamlit · JavaScript · HTML / CSS</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Django · Django REST Framework · REST APIs · authentication &amp; permissions · Django Channels · WebSockets · Daphne / ASGI · Redis caching &amp; Celery tasks (local Docker architecture) · OpenAPI docs · Streamlit · JavaScript · HTML / CSS</p>
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Development &amp; quality</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render · health / liveness / readiness checks</p>
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Data &amp; AI</h3>

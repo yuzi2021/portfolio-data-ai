@@ -9,6 +9,7 @@ A static portfolio presenting software, data and machine-learning projects — P
 - `/` — homepage
 - `/projects/` — project index (featured projects, then other technical work)
 - `/projects/skillpath/` — SkillPath Navigator case study
+- `/projects/elearning/` — eLearning Platform case study
 - `/projects/privacy-security-awareness/` — GDPR guide & staff workshop case study (supporting; linked from About)
 - `/about/` — about
 - `/cv/` — CV
@@ -29,7 +30,7 @@ Note that `styles.css` targets the inline `style` strings in the markup (for exa
 
 ## Featured projects
 
-Featured projects are marked in `index.html` and `projects/index.html` with `<!-- FEATURED 01 -->`-style comments. The third slot is reserved: to add a project, copy the article for featured project 02, change its label and content, and place it at the `FEATURED 03` comment. Smaller projects live in the "Other technical work" section below it. Only list technologies that a project's repository actually verifies.
+Featured projects are marked in `index.html` and `projects/index.html` with `<!-- FEATURED 01 -->`-style comments. Smaller projects live in the "Other technical work" section below them. Only list technologies that a project's repository actually verifies, and distinguish the eLearning public deployment from its complete local Docker architecture: Redis and Celery are not running in the public demo.
 
 ## CV
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects — Sarah Yuzi Sandström</title>
-<meta name="description" content="Software, data and machine-learning projects by Sarah Yuzi Sandström: a validated ETL pipeline and REST API, a phishing-classifier investigation, and a scheduled change-detection pipeline.">
+<meta name="description" content="Software, data and machine-learning projects by Sarah Yuzi Sandström: validated data pipelines, machine-learning evaluation, and a production-oriented full-stack Django learning platform.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,8 +101,43 @@
 <p style="margin: 14px 0 0; max-width: 680px; font-size: 17px; line-height: 1.7; color: #3D4248; text-wrap: pretty">How the data was assembled mattered more than the model architecture. A clean train/test protocol only proves a model generalises within the same distribution; if a shortcut exists in the data, the test set shares it. I now look at where each class came from before trusting a metric.</p>
 </div>
 </article>
-<!-- FEATURED 03 — reserved for the eLearning Platform once its upgrade is verified.
-     To add it: copy article 02 above (id, label "03 · ...", dl, h2, sections) and use verified details only. -->
+<!-- FEATURED 03 -->
+<article id="elearning-platform" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 64px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C; line-height: 1.6">03 · Full-stack platform<br/>&amp; backend engineering</p>
+<dl style="margin: 40px 0 0; display: grid; gap: 20px">
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Context</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">University software project, subsequently redesigned and productionised as an independent portfolio project</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Technology</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Python · Django · Django REST Framework · PostgreSQL · Docker · Daphne / ASGI · Django Channels · WebSockets · GitHub Actions</dd>
+</div>
+<div>
+<dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #656B73">Status</dt>
+<dd style="margin: 6px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">Public demo live · 85/85 tests passing · CI passing · source repository private</dd>
+</div>
+</dl>
+</div>
+<div>
+<h2 style="margin: 0; font-size: 36px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1">eLearning Platform</h2>
+<p style="margin: 12px 0 0; font-size: 19px; font-weight: 500; color: #656B73">Full-Stack Learning Platform &amp; Backend Engineering</p>
+<p style="margin: 28px 0 0; max-width: 680px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">A role-aware Django platform covering course discovery, enrollment, protected learning resources, instructor management, feedback, notifications, a scoped REST API and real-time course discussion. I redesigned the learner and instructor workflows while hardening authentication, enrollment and ownership permissions across HTML, REST and WebSocket boundaries.</p>
+<p style="margin: 22px 0 0; max-width: 680px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The public Render deployment is served by Daphne / ASGI, stores durable data in Neon PostgreSQL, exposes separate liveness and database-readiness endpoints, and supports authenticated single-process Channels WebSockets. GitHub Actions runs all 85 tests with PostgreSQL and Redis services. Redis caching, the distributed channel layer and Celery background email are implemented and tested in the complete local Docker architecture, but Redis and Celery are not running in the public deployment.</p>
+<div style="margin-top: 32px; max-width: 680px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid #DEDCD5; padding-top: 24px">
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">85/85</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">tests passing</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">CI</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">GitHub Actions</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">Neon</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">persistent PostgreSQL</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">ASGI</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">WebSockets</p></div>
+</div>
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px 30px">
+<a href="elearning/" style="font-size: 17px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Read the case study →</a>
+<a href="https://elearning-platform-demo.onrender.com" style="font-size: 17px; color: #315D8C">Open the live demo ↗</a>
+<a href="https://elearning-platform-demo.onrender.com/api-docs/" style="font-size: 17px; color: #315D8C">API documentation ↗</a>
+</div>
+</div>
+</article>
 <article id="other-work" style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 8px; border-top: 1px solid #DEDCD5">
 <div>
 <p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #656B73; line-height: 1.6">Other technical work</p>

@@ -48,11 +48,11 @@
 </div>
 <div>
 <h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Databases &amp; SQL</h3>
-<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Relational modelling in Django, including a many-to-many relationship through an explicit join table; PostgreSQL 16 in CI and Docker Compose; SQLite for the lightweight public demo; and analytical SQL queries written alongside their ORM equivalents.</p>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Relational modelling in Django, including a many-to-many relationship through an explicit join table; PostgreSQL 16 in CI and Docker Compose; persistent Neon PostgreSQL for the eLearning demo; and analytical SQL queries written alongside their ORM equivalents.</p>
 </div>
 <div>
 <h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Testing &amp; CI/CD</h3>
-<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">44 tests in SkillPath, run by GitHub Actions against a PostgreSQL service, with deployment triggered only once checks pass. 67 deterministic tests in GRC Change Monitor, which use recorded source responses so a slow website can never make the suite flaky.</p>
+<p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">44 tests in SkillPath and 85 in the eLearning Platform, with GitHub Actions exercising PostgreSQL-backed workflows. The eLearning suite also covers authentication, permissions, graceful dependency failure and end-to-end ASGI WebSockets.</p>
 </div>
 <div>
 <h3 style="margin: 0 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -0.015em">Machine learning</h3>
@@ -128,8 +128,31 @@
 </div>
 </div>
 </article>
-<!-- FEATURED 03 — reserved for the eLearning Platform once its upgrade is verified.
-     To add it: copy article 02 above, change the label to "03 · ...", and fill in verified details only. -->
+<!-- FEATURED 03 -->
+<article style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 64px; border-top: 1px solid #DEDCD5">
+<div>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #315D8C; line-height: 1.6">03 · Full-stack platform<br/>&amp; backend engineering</p>
+<p style="margin: 32px 0 0; font-size: 14px; line-height: 1.5; color: #3D4248">University software project, redesigned and productionised independently</p>
+<p style="margin: 20px 0 0; font-size: 14px; line-height: 1.5; color: #656B73">Python · Django · DRF · PostgreSQL · Channels · WebSockets · Daphne / ASGI · Docker · GitHub Actions</p>
+</div>
+<div>
+<h3 style="margin: 0; font-size: 34px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.1">eLearning Platform</h3>
+<p style="margin: 12px 0 0; font-size: 18px; font-weight: 500; color: #656B73">Full-Stack Learning Platform &amp; Backend Engineering</p>
+<p style="margin: 26px 0 0; max-width: 660px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">A role-aware learning platform for course discovery, enrollment, protected resources, instructor management, feedback, notifications, REST access and real-time course discussion. I hardened authentication and ownership boundaries across HTML, API and WebSocket workflows, and added liveness and database-readiness checks.</p>
+<p style="margin: 20px 0 0; max-width: 660px; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">The public Render service runs Django through Daphne / ASGI, uses persistent Neon PostgreSQL, and supports authenticated single-process Channels WebSockets. The complete local Docker architecture also implements and tests Redis and Celery; those services are deliberately not claimed for the public deployment.</p>
+<div style="margin-top: 32px; max-width: 660px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid #DEDCD5; padding-top: 24px">
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">85/85</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">tests passing</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">CI</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">GitHub Actions</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">Neon</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">persistent PostgreSQL</p></div>
+<div><p style="margin: 0; font-size: 28px; font-weight: 500; letter-spacing: -0.02em">ASGI</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">live WebSockets</p></div>
+</div>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px 30px">
+<a href="projects/elearning/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Read the case study →</a>
+<a href="https://elearning-platform-demo.onrender.com" style="font-size: 16px; color: #315D8C">Open the live demo ↗</a>
+<a href="https://elearning-platform-demo.onrender.com/api-docs/" style="font-size: 16px; color: #315D8C">API documentation ↗</a>
+</div>
+</div>
+</article>
 <article style="display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding: 48px 0 8px; border-top: 1px solid #DEDCD5">
 <div>
 <p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: #656B73; line-height: 1.6">Other technical work</p>
@@ -167,11 +190,11 @@
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Backend &amp; applications</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Django · Django REST Framework · REST APIs · OpenAPI docs (Swagger, ReDoc) · Streamlit</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Django · Django REST Framework · REST APIs · authentication &amp; permissions · Django Channels · WebSockets · Daphne / ASGI · Redis caching &amp; Celery tasks (local Docker architecture) · OpenAPI docs · Streamlit</p>
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Development &amp; quality</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3D4248">Git · GitHub · GitHub Actions · CI/CD · automated testing (Django test runner, unittest, pytest) · Docker · Docker Compose · Render · health / liveness / readiness checks</p>
 </div>
 <div>
 <h3 style="margin: 0 0 20px; font-size: 16px; font-weight: 600">Data &amp; AI</h3>

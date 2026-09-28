@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eLearning Platform — Sarah Yuzi Sandström</title>
+<meta name="description" content="eLearning Platform case study: a role-aware Django and Django REST Framework application with PostgreSQL, authentication and permissions, Channels WebSockets, Docker, testing and CI.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<main class="page">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: baseline; justify-content: space-between">
+<a href="../../" style="font-size: 16px; font-weight: 600; color: #17191C">Sarah Yuzi Sandström</a>
+<nav style="display: flex; align-items: baseline; gap: 32px; font-size: 15px">
+<a href="../" style="color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Projects</a>
+<a href="../../about/" style="color: #17191C">About</a>
+<a href="../../cv/" style="color: #17191C">CV</a>
+<span style="width: 1px; height: 14px; background: #D8D7D1"></span>
+<a href="https://github.com/yuzi2021" style="color: #656B73">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #656B73">LinkedIn</a>
+</nav>
+</header>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 80px 104px">
+<p style="margin: 0 0 36px; font-size: 12px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #315D8C">Case study · Full-stack platform &amp; backend engineering</p>
+<h1 style="margin: 0; max-width: 1000px; font-size: 68px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.02">eLearning Platform</h1>
+<p style="margin: 22px 0 0; max-width: 860px; font-size: 26px; line-height: 1.4; color: #656B73; letter-spacing: -0.015em">Full-Stack Learning Platform &amp; Backend Engineering</p>
+<p style="margin: 40px 0 0; max-width: 760px; font-size: 19px; line-height: 1.7; color: #3D4248; text-wrap: pretty">I revisited a substantial university Django application and developed it into a coherent, production-oriented portfolio system: role-aware learning workflows, a scoped REST API, persistent PostgreSQL deployment, authenticated real-time discussion, explicit failure behaviour, and automated verification.</p>
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px">
+<a href="https://elearning-platform-demo.onrender.com" style="display: inline-block; padding: 14px 24px; background: #315D8C; color: #F8F8F6; font-size: 16px; font-weight: 500; border-radius: 3px">Open the live demo ↗</a>
+<a href="https://elearning-platform-demo.onrender.com/api-docs/" style="font-size: 16px; font-weight: 500; color: #17191C; border-bottom: 1px solid #C9C7BF; padding-bottom: 3px">API documentation ↗</a>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid #17191C; border-bottom: 1px solid #DEDCD5; padding: 28px 0">
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">85/85</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">tests passing</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">Passing</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">GitHub Actions CI</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">Neon</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">persistent PostgreSQL</p></div>
+<div><p style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">ASGI</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Daphne + WebSockets</p></div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">What the platform does</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Learners can discover and enroll in courses, access enrollment-protected resources, leave feedback, receive notifications and join course-scoped discussion. Instructors can create and edit their own courses, manage learners and resources, and see activity connected to the courses they own. Anonymous visitors can browse the catalog without seeing protected resources or learner identities.</p>
+<p style="margin: 24px 0 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The application combines server-rendered Django workflows with Django REST Framework endpoints. I kept it as a Django monolith and retained templates: the domain and operational scope do not justify microservices or a separate SPA.</p>
+<div style="margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; max-width: 760px">
+<div>
+<h3 style="margin: 0 0 12px; font-size: 20px; font-weight: 500">Role-aware experience</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Learner and instructor dashboards prioritise genuine next actions and actual system state. The interface does not invent progress percentages because the data model has no completion events.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 12px; font-size: 20px; font-weight: 500">Scoped REST API</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Public course reads sit alongside authenticated, role- and ownership-bound writes. Profile serializers minimise personal-field exposure and list endpoints are paginated.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 12px; font-size: 20px; font-weight: 500">Real-time discussion</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Authenticated Django Channels consumers authorize course access, validate messages, persist them, and broadcast updates over WebSockets.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 12px; font-size: 20px; font-weight: 500">Explicit health signals</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248"><a href="https://elearning-platform-demo.onrender.com/livez/">Liveness</a> confirms the process answers HTTP; <a href="https://elearning-platform-demo.onrender.com/readyz/">readiness</a> and <a href="https://elearning-platform-demo.onrender.com/healthz/">health</a> execute a database query.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Authorization as a system boundary</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The main hardening work was to make permissions consistent across every way into the system—not only the HTML views. Course creation, edits, resources and learner management require an instructor profile and ownership. Enrollment and feedback require the learner role, with active enrollment required for feedback. Resource downloads and WebSocket connections re-check course access rather than trusting the surrounding page.</p>
+<p style="margin: 24px 0 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Notification queries are scoped to their recipient; profile writes are owner-scoped; logout and notification-state changes use POST with CSRF protection. Database constraints reinforce rules such as one enrollment per learner/course and bounded feedback ratings.</p>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Deployment architecture</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The same codebase has deliberately different infrastructure profiles. Core learning actions continue to work when optional services are absent; the portfolio does not imply that the public free tier runs components it does not.</p>
+<div style="margin-top: 32px; max-width: 760px">
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 18px 0; border-top: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 17px; font-weight: 600">Public demo</p><p style="margin: 6px 0 0; font-size: 13px; color: #656B73">Render + Neon</p></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Daphne serves Django over ASGI; persistent Neon PostgreSQL stores application data; Channels uses a single-process fallback. Redis, Celery and background email delivery are not running.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 18px 0; border-top: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 17px; font-weight: 600">Complete local stack</p><p style="margin: 6px 0 0; font-size: 13px; color: #656B73">Docker Compose</p></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Django / Daphne, PostgreSQL 16, Redis 7 and a Celery worker. Redis supports caching, the distributed Channels layer, and the Celery broker/result backend; PostgreSQL and uploaded media use named volumes.</p>
+</div>
+<div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 18px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 17px; font-weight: 600">Background work</p><p style="margin: 6px 0 0; font-size: 13px; color: #656B73">Optional by design</p></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.65; color: #3D4248">Celery email tasks dispatch after the database transaction commits. If Celery is disabled or unavailable, the successful enrollment or feedback write is preserved and the optional failure is logged.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Testing &amp; CI</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">All 85 tests pass. The suite covers models and database constraints, forms and authentication, HTML workflows, scoped REST endpoints, role and ownership permissions, optional-service failure, external-service fallbacks, Celery task behaviour, Redis/cache degradation, and end-to-end ASGI WebSocket authorization, persistence and broadcast.</p>
+<p style="margin: 24px 0 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The passing GitHub Actions workflow starts PostgreSQL 16 and Redis 7 services, checks for migration drift, applies migrations to PostgreSQL, runs Django system checks, verifies the production static build, and executes the complete test suite.</p>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Known limitations</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">This is a demonstration-ready learning platform, not an enterprise LMS or a production-proven service. It models courses and resources, but not modules, lessons, assignments or completion progress. The interface received accessibility-conscious improvements, not a formal accessibility audit or user study.</p>
+<p style="margin: 24px 0 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">The free public service can cold-start. Uploads are disabled because no persistent object storage is provisioned; Redis/Celery background processing and email are disabled; and the in-memory Channels layer only supports the service's single process. The complete Docker stack demonstrates the distributed Redis/Celery architecture locally.</p>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 120px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">What I learned</h2>
+<div>
+<p style="margin: 0; max-width: 720px; font-size: 22px; font-weight: 500; line-height: 1.5; letter-spacing: -0.015em; text-wrap: pretty">Productionising an existing system is largely about defining and testing boundaries.</p>
+<p style="margin: 28px 0 0; max-width: 720px; font-size: 18px; line-height: 1.7; color: #3D4248; text-wrap: pretty">Which data is public? Which action requires which role? What must commit before background work begins? Which dependency is optional? What does a health endpoint actually prove? Which product claims does the underlying data support? Answering those questions made the application more coherent than simply adding more technology would have.</p>
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px 32px">
+<a href="https://elearning-platform-demo.onrender.com" style="font-size: 17px; font-weight: 500; color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">Open the live demo ↗</a>
+<a href="https://elearning-platform-demo.onrender.com/api-docs/" style="font-size: 17px; color: #315D8C">API documentation ↗</a>
+</div>
+</div>
+</div>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 120px">
+<a href="../" style="display: block; border-top: 1px solid #DEDCD5; padding-top: 28px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #656B73">More work</p>
+<p style="margin: 16px 0 0; font-size: 36px; font-weight: 500; letter-spacing: -0.025em; color: #17191C">All projects →</p>
+</a>
+</div>
+
+<footer style="border-top: 1px solid #DEDCD5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 80px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">Sarah Yuzi Sandström</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #656B73">Computer Science student · Software &amp; data projects</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 28px; font-size: 14px">
+<a href="https://github.com/yuzi2021" style="color: #17191C">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #17191C">LinkedIn</a>
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="color: #17191C">Email</a>
+<span style="color: #656B73">Finland</span>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>
