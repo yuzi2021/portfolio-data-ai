@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps &amp; automation — Sarah Yuzi Sandström</title>
+<meta name="description" content="The pipelines behind my projects: what triggers them, what they check, and how they deploy.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="page">
+
+<body>
+<main class="page">
+<header style="max-width: 1240px; margin: 0 auto; padding: 40px 80px; display: flex; align-items: baseline; justify-content: space-between">
+<a href="../" style="font-size: 16px; font-weight: 600; color: #17191C">Sarah Yuzi Sandström</a>
+<nav style="display: flex; align-items: baseline; gap: 32px; font-size: 15px">
+<a href="../projects/" style="color: #17191C">Projects</a>
+<a href="./" style="color: #17191C; border-bottom: 1px solid #315D8C; padding-bottom: 3px">DevOps</a>
+<a href="../about/" style="color: #17191C">About</a>
+<a href="../cv/" style="color: #17191C">CV</a>
+<span style="width: 1px; height: 14px; background: #D8D7D1"></span>
+<a href="https://github.com/yuzi2021" style="color: #656B73">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #656B73">LinkedIn</a>
+</nav>
+</header><div style="max-width: 1240px; margin: 0 auto; padding: 88px 80px 120px">
+<p style="margin: 0 0 36px; font-size: 12px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #656B73">DevOps &amp; automation</p>
+<h1 style="margin: 0; max-width: 980px; font-size: 68px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.04; text-wrap: balance">Code that checks itself before it ships</h1>
+<p style="margin: 48px 0 0; max-width: 720px; font-size: 19px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Every project I deploy runs through GitHub Actions: tests against real database services, checks that only pass under production settings, and scheduled jobs that keep state between runs. This page collects the pipelines in one place.</p>
+<div style="margin-top: 48px; display: flex; gap: 48px; flex-wrap: wrap">
+<div><p style="margin:0; font-size: 40px; font-weight: 500; letter-spacing: -0.02em">196</p><p style="margin: 4px 0 0; font-size: 14px; color: #656B73">automated tests across three pipelines</p></div>
+<div><p style="margin:0; font-size: 40px; font-weight: 500; letter-spacing: -0.02em">4</p><p style="margin: 4px 0 0; font-size: 14px; color: #656B73">GitHub Actions workflows</p></div>
+<div><p style="margin:0; font-size: 40px; font-weight: 500; letter-spacing: -0.02em">2</p><p style="margin: 4px 0 0; font-size: 14px; color: #656B73">live deployments on Render</p></div>
+</div></div><div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Pipelines</h2>
+<div style="max-width: 760px; min-width: 0"><div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 18px; font-weight: 600">eLearning Platform</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">On every push</p></div>
+<div style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248"><p style="margin:0">Starts PostgreSQL 16 and Redis 7 as service containers, checks for migration drift, applies migrations, runs Django system checks, verifies the production static build, then runs all 85 tests. The demo is deployed on Render with persistent Neon PostgreSQL. <a href="../projects/elearning/">Case study →</a></p><p style="margin: 12px 0 0; font-size: 14px; color: #656B73">85/85 tests <span style="color: #B4B2A9">·</span> PostgreSQL + Redis services <span style="color: #B4B2A9">·</span> Docker Compose locally</p></div></div><div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 18px; font-weight: 600">SkillPath</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">On every push</p></div>
+<div style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248"><p style="margin:0">Runs the full suite against a real PostgreSQL 16 service, including tests that load the app under production settings. Render deploys the demo only after the checks pass. <a href="../projects/skillpath/">Case study →</a></p><p style="margin: 12px 0 0; font-size: 14px; color: #656B73">44 tests <span style="color: #B4B2A9">·</span> Gated deploy <span style="color: #B4B2A9">·</span> Docker Compose</p></div></div><div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 18px; font-weight: 600">GRC Change Monitor</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Weekday schedule</p></div>
+<div style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248"><p style="margin:0">Checks six official security and data-protection sources through RSS, JSON and HTML adapters, fingerprints each item to detect new and changed ones, and keeps state between runs. <a href="../projects/#change-monitor">Details →</a></p><p style="margin: 12px 0 0; font-size: 14px; color: #656B73">67 deterministic tests <span style="color: #B4B2A9">·</span> Scheduled ingestion</p></div></div><div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 22px 0; border-top: 1px solid #DEDCD5; border-bottom: 1px solid #DEDCD5">
+<div><p style="margin: 0; font-size: 18px; font-weight: 600">AI research digest agent</p><p style="margin: 6px 0 0; font-size: 14px; color: #656B73">Daily schedule + manual</p></div>
+<div style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248"><p style="margin:0">Collects sources, detects changes, asks the Claude API for a filtered summary, emails it, and commits its state back to the repository. <a href="https://github.com/yuzi2021/ai-digest-agent-demo">Repository ↗</a></p><p style="margin: 12px 0 0; font-size: 14px; color: #656B73">Secrets in Actions <span style="color: #B4B2A9">·</span> Fail-soft</p></div></div></div></div></div><div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">One workflow, explained</h2>
+<div style="max-width: 760px; min-width: 0"><pre style="margin: 0; padding: 24px; background: #17191C; color: #E9E8E3; border-radius: 4px; font-size: 13.5px; line-height: 1.6; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">on:
+  workflow_dispatch: {}          # run by hand to test
+  schedule:
+    - cron: "0 5 * * *"          # then daily, 05:00 UTC
+
+concurrency:
+  group: daily-digest           # never two runs pushing state at once
+  cancel-in-progress: false
+
+permissions:
+  contents: write               # only what it needs: commit state back
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: Run digest agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python digest.py
+      - name: Commit state
+        run: |
+          git add state.json digests/ || true
+          git diff --cached --quiet || git commit -m "Daily digest $(date -u +%F)"
+          git push</pre><p style="margin: 14px 0 40px; font-size: 14px; color: #656B73">Abridged from <a href="https://github.com/yuzi2021/ai-digest-agent-demo/blob/main/.github/workflows/daily-digest.yml">daily-digest.yml ↗</a></p><div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px"><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Secrets stay out of the code</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">API keys and credentials live in GitHub Actions secrets and reach the job only as environment variables for the one step that needs them.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Least privilege</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">The workflow token can write repository contents and nothing else, because committing state is the only thing it has to do.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Safe to run twice</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">A concurrency group stops overlapping runs, the commit step is skipped when nothing changed, and a timeout ends a stuck job.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Failures are visible, not fatal</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">If one source fails, the run reports it in the output and carries on with the rest, so one broken feed does not cost a day of results.</p></div></div></div></div></div><div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">Working with AI</h2>
+<div style="max-width: 760px; min-width: 0"><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3D4248; font-size: 18px; line-height: 1.7">I use AI coding assistants (Claude Code, Codex) every day for implementation, tests and refactoring. I decide the design, review every change, run the tests, and make sure I can explain each part. The pipelines above are where that discipline pays off: CI checks the AI-assisted code exactly as strictly as anything I write by hand.</p></div></div></div><div style="max-width: 1240px; margin: 0 auto; padding: 0 80px 128px">
+<div style="border-top: 1px solid #17191C; padding-top: 28px; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px">
+<h2 style="margin: 0; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25">What I am learning next</h2>
+<div style="max-width: 760px; min-width: 0"><div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px"><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Infrastructure as code</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Defining cloud resources in Terraform or Bicep, so environments are reviewed and versioned like application code.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Azure fundamentals</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Currently learning Azure, starting with identity, networking and the platform services teams build on.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">OIDC instead of stored secrets</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Letting workflows authenticate to the cloud with short-lived tokens rather than long-lived keys.</p></div><div><h3 style="margin: 0 0 14px; font-size: 20px; font-weight: 500; letter-spacing: -0.015em">Reusable workflows</h3><p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3D4248; text-wrap: pretty">Shared, versioned pipeline templates, so many teams get the same checks without copying YAML.</p></div></div></div></div></div><footer style="border-top: 1px solid #DEDCD5">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 80px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 48px">
+<div>
+<p style="margin: 0; font-size: 16px; font-weight: 600">Sarah Yuzi Sandström</p>
+<p style="margin: 10px 0 0; font-size: 14px; color: #656B73">Computer Science student · Software &amp; data projects</p>
+</div>
+<div style="display: flex; align-items: baseline; gap: 28px; font-size: 14px">
+<a href="https://github.com/yuzi2021" style="color: #17191C">GitHub</a>
+<a href="https://www.linkedin.com/in/sarah-sandstr%C3%B6m-17338ab6/" style="color: #17191C">LinkedIn</a>
+<a href="mailto:sarahyuzisandstrom@gmail.com" style="color: #17191C">Email</a>
+<span style="color: #656B73">Finland</span>
+</div>
+</div>
+</footer>
+
+</main>
+</body>
+</html>
